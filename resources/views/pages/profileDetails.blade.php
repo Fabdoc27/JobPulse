@@ -298,6 +298,7 @@
 
                     @if ($user->candidateDetails->educationHistories->count() > 0)
                         @foreach ($user->candidateDetails->educationHistories as $educationHistory)
+                            <input type="hidden" name="education_id[]" value="{{ $educationHistory->id }}">
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Degree</label>
@@ -410,6 +411,7 @@
                 <div class="row d-flex justify-content-center align-items-center">
                     @if ($user->candidateDetails->workExperiences->count() > 0)
                         @foreach ($user->candidateDetails->workExperiences as $workExperience)
+                            <input type="hidden" name="work_experience_id[]" value="{{ $workExperience->id }}">
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Job Title</label>
@@ -433,7 +435,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Start Date</label>
-                                    <input type="date" class="form-control" name="start_date[]"
+                                    <input type="date" class="form-control" name="work_start_date[]"
                                         value="{{ $workExperience->start_date ?? '' }}">
                                     @error('start_date')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
@@ -443,7 +445,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">End Date</label>
-                                    <input type="date" class="form-control" name="end_date[]"
+                                    <input type="date" class="form-control" name="work_end_date[]"
                                         value="{{ $workExperience->end_date ?? '' }}">
                                     @error('end_date')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
@@ -473,7 +475,7 @@
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Start Date</label>
-                            <input type="date" class="form-control" name="start_date[]">
+                            <input type="date" class="form-control" name="work_start_date[]">
                             @error('start_date')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
@@ -482,7 +484,7 @@
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">End Date</label>
-                            <input type="date" class="form-control" name="end_date[]">
+                            <input type="date" class="form-control" name="work_end_date[]">
                             @error('end_date')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
@@ -619,7 +621,7 @@
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Start Date</label>
-                            <input type="date" class="form-control" name="start_date[]">
+                            <input type="date" class="form-control" name="work_start_date[]">
                             @error('start_date')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
@@ -628,7 +630,7 @@
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">End Date</label>
-                            <input type="date" class="form-control" name="end_date[]">
+                            <input type="date" class="form-control" name="work_end_date[]">
                             @error('end_date')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror

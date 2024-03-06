@@ -173,23 +173,25 @@ class ProfileController extends Controller {
         $userId = $request->user()->id;
 
         $request->validate( [
-            'name'             => 'nullable|string',
-            'phone'            => 'nullable|string',
-            'address'          => 'nullable|string',
-            'current_password' => ['nullable', new MatchCurrentPassword],
-            'new_password'     => ['nullable', 'min:4'],
-            'confirm_password' => ['nullable', 'same:new_password'],
-            'img'              => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'degree.*'         => 'nullable|string',
-            'institution.*'    => 'nullable|string',
-            'score.*'          => 'nullable|string',
-            'start_date.*'     => 'nullable|date',
-            'end_date.*'       => 'nullable|date',
-            'title.*'          => 'nullable|string',
-            'company.*'        => 'nullable|string',
-            'skills'           => 'nullable|string',
-            'current_salary'   => 'nullable|numeric',
-            'expected_salary'  => 'nullable|numeric',
+            'name'              => 'nullable|string',
+            'phone'             => 'nullable|string',
+            'address'           => 'nullable|string',
+            'current_password'  => ['nullable', new MatchCurrentPassword],
+            'new_password'      => ['nullable', 'min:4'],
+            'confirm_password'  => ['nullable', 'same:new_password'],
+            'img'               => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'degree.*'          => 'nullable|string',
+            'institution.*'     => 'nullable|string',
+            'score.*'           => 'nullable|string',
+            'start_date.*'      => 'nullable|date',
+            'end_date.*'        => 'nullable|date',
+            'work_start_date.*' => 'nullable|date',
+            'work_end_date.*'   => 'nullable|date',
+            'title.*'           => 'nullable|string',
+            'company.*'         => 'nullable|string',
+            'skills'            => 'nullable|string',
+            'current_salary'    => 'nullable|numeric',
+            'expected_salary'   => 'nullable|numeric',
         ] );
 
         DB::beginTransaction();
@@ -242,63 +244,66 @@ class ProfileController extends Controller {
                 );
             }
 
-            $candidate = CandidateDetail::where( 'user_id', $userId )->firstOrFail();
-
             // education
-            if ( $request->filled( 'degree' ) ) {
-                foreach ( $request->degree as $key => $degree ) {
-                    EducationHistory::updateOrCreate(
-                        ['candidate_id' => $candidate->id, 'degree' => $degree],
-                        [
-                            'institution' => $request->institution[$key],
-                            'score'       => $request->score[$key],
-                            'start_date'  => $request->start_date[$key],
-                            'end_date'    => $request->end_date[$key],
-                        ]
-                    );
-
-                }
-                $existingEducation    = $candidate->educationHistories()->pluck( 'id' )->toArray();
-                $currentEducationData = array_map(
-                    function ( $data ) {
-                        return ['degree' => $data];
-                    },
-                    $request->input( 'degree', [] )
-                );
-                $educationDelete = array_diff( $existingEducation, array_column( $currentEducationData, 'degree' ) );
-                EducationHistory::whereIn( 'id', $educationDelete )->delete();
-            }
+            $this->educationHistories( $request, $user );
 
             // work experience
-            if ( $request->filled( 'title' ) ) {
-                foreach ( $request->title as $key => $title ) {
-                    WorkExperience::updateOrCreate(
-                        ['candidate_id' => $candidate->id, 'job_title' => $title],
-                        [
-                            'job_title'  => $request->title[$key],
-                            'company'    => $request->company[$key],
-                            'start_date' => $request->start_date[$key],
-                            'end_date'   => $request->end_date[$key],
-                        ]
-                    );
-                }
-                $existingWorkExperience    = $candidate->workExperiences()->pluck( 'id' )->toArray();
-                $currentWorkExperienceData = array_map(
-                    function ( $data ) {
-                        return ['title' => $data];
-                    },
-                    $request->input( 'title', [] )
-                );
-                $workExperienceDelete = array_diff( $existingWorkExperience, array_column( $currentWorkExperienceData, 'title' ) );
-                WorkExperience::whereIn( 'id', $workExperienceDelete )->delete();
-            }
+            $this->workExperiences( $request, $user );
 
             DB::commit();
             return redirect()->back()->with( 'success', 'Profile updated successfully' );
 
         } catch ( Exception $e ) {
             DB::rollBack();
-            return redirect()->back()->with( 'error', 'Failed to update profile' );
+            return redirect()->back()->with( 'error', $e->getMessage() );
+        }
+    }
+
+    private function educationHistories( $request, $user ) {
+        if ( $request->filled( 'degree' ) ) {
+            foreach ( $request->degree as $key => $degree ) {
+                if ( !empty( $degree ) ) {
+                    $educationId = $request->education_id[$key] ?? null;
+                    EducationHistory::updateOrCreate(
+                        ['id' => $educationId],
+                        [
+                            'candidate_id' => $user->candidateDetails->id,
+                            'degree'       => $degree,
+                            'institution'  => $request->institution[$key] ?? null,
+                            'score'        => $request->score[$key] ?? null,
+                            'start_date'   => $request->start_date[$key] ?? null,
+                            'end_date'     => $request->end_date[$key] ?? null,
+                        ]
+                    );
+                } else {
+                    $educationId = $request->education_id[$key] ?? null;
+                    if ( $educationId ) {
+                        EducationHistory::find( $educationId )->delete();
+                    }
+                }
+            }
+        }
+    }
+
+    private function workExperiences( $request, $user ) {
+        if ( $request->filled( 'title' ) ) {
+            foreach ( $request->title as $key => $title ) {
+                $workExperienceId = $request->work_experience_id[$key] ?? null;
+                if ( !empty( $title ) ) {
+                    WorkExperience::updateOrCreate(
+                        ['id' => $workExperienceId],
+                        [
+                            'candidate_id' => $user->candidateDetails->id,
+                            'job_title'    => $title,
+                            'company'      => $request->company[$key],
+                            'start_date'   => $request->work_start_date[$key],
+                            'end_date'     => $request->work_end_date[$key],
+                        ]
+                    );
+                } elseif ( $workExperienceId ) {
+                    WorkExperience::find( $workExperienceId )->delete();
+                }
+            }
         }
     }
 }

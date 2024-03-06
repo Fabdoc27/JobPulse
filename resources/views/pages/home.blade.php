@@ -8,7 +8,7 @@
     <section>
         @if ($homeContent)
             <div class="container-fluid position-relative rounded-bottom"
-                style="background-image: url('{{ asset('pages/' . $homeContent->img_url) }}'); background-size: cover; background-position: center center; background-repeat: no-repeat; width: 100%; height: 400px;">
+                style="background-image: url('{{ asset('pages/' . $homeContent->img_url) }}'); background-size: cover; background-position: top center; background-repeat: no-repeat; width: 100%; height: 500px;">
 
                 {{-- Overlay --}}
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50 rounded-bottom"></div>
@@ -16,8 +16,8 @@
                 {{-- Content --}}
                 <div class="row position-relative z-index-1">
                     <div class="col-md-12 ms-5 w-50">
-                        <h3 class="text-white" style="margin-top: 4rem">{{ $homeContent->title }}</h3>
-                        <p class="text-white mt-3">{{ $homeContent->description }}</p>
+                        <h3 class="text-white fs-1 mb-0" style="margin-top: 4rem">{{ $homeContent->title }}</h3>
+                        <p class="text-white fs-16 mt-3">{{ $homeContent->description }}</p>
                     </div>
                 </div>
             </div>
@@ -33,12 +33,13 @@
                         <div class="d-flex justify-content-center align-items-center mb-4">
                             @foreach ($topCompanies as $company)
                                 <div class="mx-3 d-flex align-items-center">
-                                    @if ($company)
-                                        <img class="rounded"
-                                            src="{{ asset('uploads/' . $company->img_url ?? 'assets/images/img-4.jpg') }}"
+                                    @if ($company->img_url)
+                                        <img class="rounded object-fit-cover"
+                                            src="{{ asset('uploads/' . $company->img_url) }}"
                                             style="height:150px; width:250px;" alt="{{ $company->name }}">
                                     @else
-                                        <img class="rounded" src="{{ asset('assets/images/img-4.jpg') }}"
+                                        <img class="rounded object-fit-cover"
+                                            src="{{ asset('assets/images/dummyLogo.png') }}"
                                             style="height:150px; width:250px;" alt="Placeholder Image">
                                     @endif
                                 </div>

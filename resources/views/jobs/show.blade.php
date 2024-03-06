@@ -14,7 +14,10 @@
             <div class="mb-3">
                 <h5>Title</h5>
                 <p class="m-0 fs-14">{{ $job->title }}</p>
-
+            </div>
+            <div class="mb-3">
+                <h5>Company</h5>
+                <p class="m-0 fs-14">{{ $job->company->name }}</p>
             </div>
             <div class="mb-3">
                 <h5>Category</h5>

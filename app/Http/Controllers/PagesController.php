@@ -73,7 +73,7 @@ class PagesController extends Controller {
         // dd( $topCompanies );
         $jobCategories = ['developer', 'designer', 'digital marketer', 'UI/UX', 'cyber security', 'other'];
 
-        $recentJobs = Job::where( 'status', 'active' )->latest();
+        $recentJobs = Job::where( 'status', 'active' )->where( 'deadline', '>', now() )->latest();
 
         if ( $request->has( 'category' ) ) {
             $recentJobs->where( 'category', $request->category );
@@ -89,7 +89,7 @@ class PagesController extends Controller {
 
         $jobContent = Page::where( 'page_name', 'jobs' )->first();
 
-        $jobs = Job::where( 'status', 'active' )->latest();
+        $jobs = Job::where( 'status', 'active' )->where( 'deadline', '>', now() )->latest();
 
         if ( $request->has( 'category' ) ) {
             $jobs->where( 'category', $request->category );

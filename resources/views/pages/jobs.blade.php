@@ -8,7 +8,7 @@
     <section>
         @if ($jobContent)
             <div class="container-fluid position-relative rounded-bottom"
-                style="background-image: url('{{ asset('pages/' . $jobContent->img_url) }}'); background-size: cover; background-position: center center; background-repeat: no-repeat; width: 100%; height: 400px;">
+                style="background-image: url('{{ asset('pages/' . $jobContent->img_url) }}'); background-size: cover; background-position: top center; background-repeat: no-repeat; width: 100%; height: 500px;">
 
                 {{-- Overlay --}}
                 <div class="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50 rounded-bottom"></div>
@@ -16,8 +16,8 @@
                 {{-- Content --}}
                 <div class="row position-relative z-index-1">
                     <div class="col-md-12 ms-5 w-50">
-                        <h3 class="text-white" style="margin-top: 4rem">{{ $jobContent->title }}</h3>
-                        <p class="text-white mt-3">{{ $jobContent->description }}</p>
+                        <h3 class="text-white fs-1 mb-0" style="margin-top: 4rem">{{ $jobContent->title }}</h3>
+                        <p class="text-white fs-16 mt-3">{{ $jobContent->description }}</p>
                     </div>
                 </div>
             </div>
