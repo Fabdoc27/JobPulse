@@ -11,8 +11,8 @@ It's super easy to setup.
 First, clone the project and change the directory
 
 ```shell
-git clone https://github.com/Fabdoc27/pos_app_jwt.git
-cd pos_app_jwt
+git clone git@github.com:Fabdoc27/job_pulse.git
+cd job_pulse
 ```
 
 Then follow the process.
