@@ -29,7 +29,7 @@
                         @csrf
                         <div class="col-lg-12 pt-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="email" name="email" class="form-control"
+                                <input type="email" name="email" value="owner@admin.com" class="form-control"
                                     placeholder="Enter your email">
                                 <label>Email Address</label>
                             </div>
@@ -37,7 +37,7 @@
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="password" name="password" class="form-control"
+                                <input type="password" value="password" name="password" class="form-control"
                                     placeholder="Enter your password border border-black">
                                 <label>Password</label>
                             </div>

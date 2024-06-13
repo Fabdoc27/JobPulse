@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder {
     /**
@@ -14,9 +14,9 @@ class UserSeeder extends Seeder {
      */
     public function run(): void {
         $user = User::create( [
-            'email'    => 'owner@admin.com',
-            'password' => Hash::make( '123' ),
-            'role'     => 'owner',
+            'email' => 'owner@admin.com',
+            'password' => Hash::make( 'password' ),
+            'role' => 'owner',
         ] );
 
         // for receiving email from visitors
