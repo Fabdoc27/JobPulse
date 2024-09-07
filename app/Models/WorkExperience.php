@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\CandidateDetail;
 use Illuminate\Database\Eloquent\Model;
 
-class WorkExperience extends Model {
+class WorkExperience extends Model
+{
     protected $fillable = [
         'candidate_id',
         'job_title',
@@ -14,7 +14,8 @@ class WorkExperience extends Model {
         'end_date',
     ];
 
-    public function candidateDetail() {
-        return $this->belongsTo( CandidateDetail::class, 'candidate_id' );
+    public function candidateDetail()
+    {
+        return $this->belongsTo(CandidateDetail::class, 'candidate_id');
     }
 }

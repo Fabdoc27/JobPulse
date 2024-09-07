@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
-class OwnerDetail extends Model {
+class OwnerDetail extends Model
+{
     protected $fillable = [
         'name',
         'email',
@@ -15,7 +15,8 @@ class OwnerDetail extends Model {
         'user_id',
     ];
 
-    public function user() {
-        return $this->belongsTo( User::class );
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

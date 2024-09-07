@@ -13,7 +13,7 @@ return [
     |
      */
 
-    'default'  => env( 'MAIL_MAILER', 'smtp' ),
+    'default' => env('MAIL_MAILER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,24 +33,24 @@ return [
     |
      */
 
-    'mailers'  => [
-        'smtp'     => [
-            'transport'    => 'smtp',
-            'url'          => env( 'MAIL_URL' ),
-            'host'         => env( 'MAIL_HOST', 'smtp.mailgun.org' ),
-            'port'         => env( 'MAIL_PORT', 587 ),
-            'encryption'   => env( 'MAIL_ENCRYPTION', 'tls' ),
-            'username'     => env( 'MAIL_USERNAME' ),
-            'password'     => env( 'MAIL_PASSWORD' ),
-            'timeout'      => null,
-            'local_domain' => env( 'MAIL_EHLO_DOMAIN' ),
+    'mailers' => [
+        'smtp' => [
+            'transport' => 'smtp',
+            'url' => env('MAIL_URL'),
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('MAIL_USERNAME'),
+            'password' => env('MAIL_PASSWORD'),
+            'timeout' => null,
+            'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 
-        'ses'      => [
+        'ses' => [
             'transport' => 'ses',
         ],
 
-        'mailgun'  => [
+        'mailgun' => [
             'transport' => 'mailgun',
             // 'client' => [
             //     'timeout' => 5,
@@ -67,21 +67,21 @@ return [
 
         'sendmail' => [
             'transport' => 'sendmail',
-            'path'      => env( 'MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i' ),
+            'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
         ],
 
-        'log'      => [
+        'log' => [
             'transport' => 'log',
-            'channel'   => env( 'MAIL_LOG_CHANNEL' ),
+            'channel' => env('MAIL_LOG_CHANNEL'),
         ],
 
-        'array'    => [
+        'array' => [
             'transport' => 'array',
         ],
 
         'failover' => [
             'transport' => 'failover',
-            'mailers'   => [
+            'mailers' => [
                 'smtp',
                 'log',
             ],
@@ -99,9 +99,9 @@ return [
     |
      */
 
-    'from'     => [
-        'address' => env( 'MAIL_FROM_ADDRESS', env( 'OWNER_EMAIL' ) ),
-        'name'    => env( 'MAIL_FROM_NAME', 'Job Pulse' ),
+    'from' => [
+        'address' => env('MAIL_FROM_ADDRESS', env('OWNER_EMAIL')),
+        'name' => env('MAIL_FROM_NAME', 'Job Pulse'),
     ],
 
     /*
@@ -119,7 +119,7 @@ return [
         'theme' => 'default',
 
         'paths' => [
-            resource_path( 'views/vendor/mail' ),
+            resource_path('views/vendor/mail'),
         ],
     ],
 

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\CandidateDetail;
 use Illuminate\Database\Eloquent\Model;
 
-class Job extends Model {
+class Job extends Model
+{
     protected $fillable = [
         'company_id',
         'title',
@@ -23,15 +23,18 @@ class Job extends Model {
         'skills' => 'array',
     ];
 
-    public function company() {
-        return $this->belongsTo( CompanyDetail::class, 'company_id' );
+    public function company()
+    {
+        return $this->belongsTo(CompanyDetail::class, 'company_id');
     }
 
-    public function candidates() {
-        return $this->belongsToMany( CandidateDetail::class, 'job_candidates', 'job_id', 'candidate_id' )->withPivot( 'status' )->withTimestamps();
+    public function candidates()
+    {
+        return $this->belongsToMany(CandidateDetail::class, 'job_candidates', 'job_id', 'candidate_id')->withPivot('status')->withTimestamps();
     }
 
-    public function appliedCount() {
+    public function appliedCount()
+    {
         return $this->candidates()->count();
     }
 }

@@ -8,8 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable {
+class User extends Authenticatable
+{
     use HasApiTokens, HasFactory, Notifiable;
+
     protected $fillable = [
         'email',
         'password',
@@ -17,16 +19,19 @@ class User extends Authenticatable {
         'otp',
     ];
 
-    public function ownerDetails() {
-        return $this->hasOne( OwnerDetail::class );
+    public function ownerDetails()
+    {
+        return $this->hasOne(OwnerDetail::class);
     }
 
-    public function companyDetails() {
-        return $this->hasOne( CompanyDetail::class );
+    public function companyDetails()
+    {
+        return $this->hasOne(CompanyDetail::class);
     }
 
-    public function candidateDetails() {
-        return $this->hasOne( CandidateDetail::class, 'user_id' );
+    public function candidateDetails()
+    {
+        return $this->hasOne(CandidateDetail::class, 'user_id');
     }
 
     protected $hidden = [
@@ -36,6 +41,6 @@ class User extends Authenticatable {
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password'          => 'hashed',
+        'password' => 'hashed',
     ];
 }
