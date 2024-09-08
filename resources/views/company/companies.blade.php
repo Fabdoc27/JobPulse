@@ -16,8 +16,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
+        {{-- Search Field  --}}
         <div class="col-md-3 offset-md-6">
-            {{-- Search Field  --}}
             <form action="{{ route('companies.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
                     <input type="text" name="search" class="form-control" placeholder="Search by name...">
@@ -25,8 +25,8 @@
                 </div>
             </form>
         </div>
+        {{-- Sort Dropdown  --}}
         <div class="col-md-3">
-            {{-- Sort Dropdown  --}}
             <form action="{{ route('companies.index') }}" method="GET" class="mb-3">
                 <div class="input-group">
                     <select name="sort" class="form-select">
@@ -42,10 +42,9 @@
 
     {{-- Company Cards  --}}
     <div class="row">
-
         @foreach ($companies as $company)
+            {{-- Confirmation Modal --}}
             <div class="col-md-12">
-                {{-- Confirmation Modal --}}
                 <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -77,15 +76,12 @@
                             <img class="rounded" src="{{ asset('uploads/' . $company->img_url) }}"
                                 style="width: 150px; height:100px;" alt="{{ $company->name }}">
                         </div>
-
                         <div class="col-md-5">
                             <h5 class="card-title">{{ ucwords($company->name) }}</h5>
                             <p class="card-text fw-semibold">Status: {{ ucwords($company->status) }}</p>
                         </div>
-
                         <div class="col-md-5 d-flex justify-content-center align-items-center gap-2">
                             <a href="{{ route('company.show', $company->id) }}" class="btn btn-primary">View</a>
-
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                 data-bs-target="#confirmationModal">Delete
                             </button>

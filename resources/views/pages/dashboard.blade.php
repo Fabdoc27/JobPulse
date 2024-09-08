@@ -25,7 +25,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="card-body">
@@ -34,7 +33,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="card-body">

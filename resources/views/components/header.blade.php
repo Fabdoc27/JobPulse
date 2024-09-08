@@ -1,7 +1,6 @@
 <header id="page-topbar">
     <div class="layout-width">
         <div class="navbar-header">
-
             <div class="d-flex">
                 <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
                     id="topnav-hamburger-icon">
@@ -11,7 +10,6 @@
                         <span></span>
                     </span>
                 </button>
-
                 {{-- App Search --}}
                 <form class="app-search d-none d-md-block">
                     <div class="position-relative">
@@ -21,12 +19,10 @@
                         <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
                             id="search-close-options"></span>
                     </div>
-
                 </form>
             </div>
 
             <div class="d-flex align-items-center">
-
                 {{-- fullscreen --}}
                 <div class="ms-1 header-item d-none d-sm-flex">
                     <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
@@ -43,14 +39,13 @@
                     </button>
                 </div>
 
+                {{-- Nav Links --}}
                 <div>
                     <a href="{{ route('homepage') }}" class="btn btn-primary d-inline-block ms-2">Home</a>
                 </div>
-
                 <div class="dropdown ms-sm-3 header-item topbar-user">
                     <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-
                         <span class="d-flex align-items-center">
                             @if (auth()->user()->role == 'owner')
                                 <img class="rounded-circle header-profile-user"
@@ -70,20 +65,16 @@
                                     <span
                                         class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ optional($user->ownerDetails)->name ? ucwords(optional($user->ownerDetails)->name) : auth()->user()->email }}
                                     </span>
-
                                     <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Owner</span>
                                 @elseif(auth()->user()->role == 'company')
                                     <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
                                         {{ optional($user->companyDetails)->name ? ucwords(optional($user->companyDetails)->name) : auth()->user()->email }}
                                     </span>
-
                                     <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Company</span>
                                 @elseif(auth()->user()->role == 'candidate')
                                     <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
                                         {{ optional($user->candidateDetails)->name ? ucwords(optional($user->candidateDetails)->name) : auth()->user()->email }}
-
                                     </span>
-
                                     <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Candidate</span>
                                 @endif
                             </span>
@@ -92,7 +83,7 @@
 
                     @if (auth()->check())
                         <div class="dropdown-menu dropdown-menu-end">
-                            <!-- User -->
+                            {{-- User  --}}
                             @if (auth()->user()->role == 'owner')
                                 <h6 class="dropdown-header">Welcome
                                     {{ $user->ownerDetails ? ucwords($user->ownerDetails->name) : '' }}!
@@ -120,7 +111,6 @@
                         </div>
                     @endif
                 </div>
-
             </div>
         </div>
     </div>

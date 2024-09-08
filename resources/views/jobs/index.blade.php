@@ -28,8 +28,9 @@
                     </div>
                 </form>
             </div>
+
+            {{-- Sort Dropdown  --}}
             <div class="col-md-3">
-                {{-- Sort Dropdown  --}}
                 <form action="{{ route('jobs.index') }}" method="GET" class="mb-3">
                     <div class="input-group">
                         <select name="sort" class="form-select">
@@ -175,7 +176,6 @@
                                     @endforeach
                                 </p>
                             </div>
-
                             <div class="col-md-2 d-flex justify-content-start align-items-center gap-2">
                                 <div>
                                     <a href="{{ route('jobs.show', $job->id) }}" class="btn btn-info d-inline-block">

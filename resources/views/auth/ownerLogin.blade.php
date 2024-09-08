@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="row ">
             <div class="col-md-6 offset-md-3 card shadow-lg" style="margin: 150px auto">
@@ -57,7 +56,6 @@
                             </p>
                         </div>
                     </form>
-
                     <div class="row justify-content-center mt-3 text-center">
                         <div class="col-md-6">
                             <a href="{{ route('company.login') }}" class="btn btn-primary d-inline-block">Login As
@@ -68,14 +66,12 @@
                                 Candidate</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    </script>
 </body>
 
 </html>

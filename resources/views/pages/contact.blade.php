@@ -67,11 +67,9 @@
             </div>
         @endif
     </section>
-
     <section>
         <div class="container py-5">
             <div class="row">
-
                 @if (session('error'))
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                         <p class="text-center m-0">{{ session('error') }}</p>
@@ -94,7 +92,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="card rounded-3 shadow-lg p-3">
                         <div class="card-body">
@@ -130,7 +127,6 @@
             </div>
         </div>
     </section>
-
     <section>
         @if ($topCompanies)
             <div class="container">

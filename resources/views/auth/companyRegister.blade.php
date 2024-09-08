@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="row ">
             <div class="col-md-6 offset-md-3 card shadow-lg" style="margin: 150px auto">
@@ -40,7 +39,6 @@
                             @error('email')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
-
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
                                 <input type="password" name="password"
                                     class="form-control
@@ -52,7 +50,6 @@
                             @error('password')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
-
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
                                 <input type="password" name="password_confirmation"
                                     class="form-control
@@ -65,7 +62,6 @@
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
                         </div>
-
                         <div class="col-lg-12 d-flex justify-content-center align-items-center gap-3">
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary px-5">Submit</button>
@@ -75,7 +71,6 @@
                             </p>
                         </div>
                     </form>
-
                     <div class="row justify-content-center mt-4 text-center">
                         <div class="col-md-6">
                             <a href="{{ route('candidate.register') }}" class="btn btn-primary d-inline-block">Register
@@ -83,14 +78,12 @@
                                 Candidate</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    </script>
 </body>
 
 </html>

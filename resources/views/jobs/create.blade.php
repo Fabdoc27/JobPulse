@@ -20,7 +20,6 @@
         <form action="{{ route('jobs.store') }}" method="POST">
             @csrf
             <input type="hidden" name="company_id" value="{{ $user->companyDetails->id }}">
-
             <div class="row d-flex justify-content-center ">
                 <div class="col-md-6">
                     <div class="mb-3">
@@ -30,7 +29,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Category</label>
                         <select class="form-select" name="category">
@@ -42,7 +40,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Location</label>
                         <select class="form-select" name="location">
@@ -55,7 +52,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Skills (add skills by comma )</label>
@@ -64,7 +60,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Salary</label>
                         <input type="number" class="form-control" name="salary" value="{{ old('salary') }}">
@@ -72,7 +67,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Deadline</label>
                         <input type="date" class="form-control" name="deadline" value="{{ old('deadline') }}">
@@ -93,7 +87,6 @@
                     </div>
                 </div>
             </div>
-
             <button type="submit" class="btn btn-primary">Post Job</button>
         </form>
     @endif

@@ -43,9 +43,7 @@
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-md-8">
                         <h4 class="d-inline m-0">{{ ucwords($blog->title) }}</h4>
-
                         <p class="mt-1 mb-1 fw-semibold">Posted On : {{ $blog->created_at->format('d-m-y') }}</p>
-
                         @foreach ($blog->tags as $tags)
                             <span class="badge bg-primary fs-6">{{ ucwords($tags) }}</span>
                         @endforeach

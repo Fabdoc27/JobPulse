@@ -28,6 +28,7 @@
             <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-8">
                     <h3 class="fs-20">{{ ucwords($applicant->name) }}</h3>
+
                     <p class="mt-1 mb-2 fw-semibold">Status : {{ ucwords($applicant->pivot->status) }}</p>
                     <p class="mt-1 mb-2 fw-semibold">Apply Date: {{ $applicant->pivot->created_at->format('d-m-y') }}</p>
                     <p class="mt-1 mb-2 fw-semibold">Skills :
@@ -41,7 +42,6 @@
                         data-bs-target="#previewModal{{ $applicant->id }}">
                         Details
                     </button>
-
                     <form action="{{ route('job.selection') }}" method="POST">
                         @csrf
                         <input type="hidden" name="candidate_id" value="{{ $applicant->id }}">
@@ -78,7 +78,6 @@
                         <h6 class="modal-title" id="previewModalLabel">Preview Profile</h6>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-8">
@@ -173,7 +172,6 @@
                                 <p>{{ $applicant->expected_salary ?? '' }}</p>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="modal-footer d-flex justify-content-center ">

@@ -30,7 +30,6 @@
                         </div>
                     </div>
                 </div>
-
                 <h6 class="mt-3">Education History</h6>
                 <div class="table-responsive">
                     <table class="table">
@@ -56,7 +55,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <h6 class="mt-3">Work Experience</h6>
                 <div class="table-responsive">
                     <table class="table">
@@ -80,28 +78,23 @@
                         </tbody>
                     </table>
                 </div>
-
                 <h6 class="mt-3">Skills</h6>
                 <div class="mb-3">
                     @foreach ($user->candidateDetails->skills ?? [] as $skill)
                         <span class="badge bg-primary fs-12 me-1">{{ ucwords($skill) }}</span>
                     @endforeach
                 </div>
-
                 <div class="d-flex gap-5">
                     <div class="mb-3">
                         <h6>Current Salary</h6>
                         <p>{{ $user->candidateDetails->current_salary ?? '' }}</p>
                     </div>
-
                     <div class="mb-3">
                         <h6>Expected Salary</h6>
                         <p>{{ $user->candidateDetails->expected_salary ?? '' }}</p>
                     </div>
                 </div>
-
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
             </div>

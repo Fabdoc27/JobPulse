@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="row ">
             <div class="col-md-6 offset-md-3 card shadow-lg" style="margin: 150px auto">
@@ -73,7 +72,6 @@
     </div>
 
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    </script>
 </body>
 
 </html>

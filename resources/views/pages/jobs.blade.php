@@ -23,7 +23,6 @@
             </div>
         @endif
     </section>
-
     <section>
         <div class="container">
             <div class="row g-0 d-flex justify-content-between align-items-center">
@@ -49,8 +48,6 @@
                     </form>
                 </div>
             </div>
-
-
             @if ($jobs->isNotEmpty())
                 @foreach ($jobs as $job)
                     <div class="card mb-3 shadow p-3">
@@ -64,7 +61,6 @@
                                     <span class="badge bg-primary fs-6">{{ ucwords($skill) }}</span>
                                 @endforeach
                             </div>
-
                             <div class="col-md-4 d-flex justify-content-center align-items-center gap-2">
                                 <div>
                                     <a href="{{ route('jobs.details', $job) }}" class="d-inline-block btn btn-info">
@@ -81,6 +77,7 @@
                     </div>
                 @endforeach
             @endif
+
             {{-- Pagination Links --}}
             <div class="mt-3">
                 {{ $jobs->appends(request()->query())->links() }}

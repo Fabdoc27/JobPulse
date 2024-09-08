@@ -22,7 +22,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div class="container">
                 <div class="row">
@@ -33,7 +32,6 @@
                 </div>
             </div>
         </section>
-
         <section>
             <div class="container">
                 <div class="row">
@@ -45,7 +43,6 @@
             </div>
         </section>
     @endif
-
     <section>
         @if ($topCompanies)
             <div class="container">

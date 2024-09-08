@@ -24,10 +24,11 @@
     <div id="scrollbar">
         <div class="container-fluid">
             <div id="two-column-menu"></div>
-
+            {{-- Menus --}}
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
 
+                {{-- Owner/Admin --}}
                 @if (auth()->user()->role == 'owner')
                     {{-- dashboard --}}
                     <li class="nav-item">
@@ -36,7 +37,6 @@
                             <span>Dashbord</span>
                         </a>
                     </li>
-                    {{-- dashboard --}}
 
                     {{-- Companies --}}
                     <li class="nav-item">
@@ -45,7 +45,6 @@
                             <span data-key="t-widgets">Companies</span>
                         </a>
                     </li>
-                    {{-- Companies --}}
 
                     {{-- jobs --}}
                     <li class="nav-item">
@@ -54,7 +53,6 @@
                             <span data-key="t-widgets">Jobs</span>
                         </a>
                     </li>
-                    {{-- jobs --}}
 
                     {{-- blogs --}}
                     <li class="nav-item">
@@ -63,7 +61,6 @@
                             <span data-key="t-widgets">Blogs</span>
                         </a>
                     </li>
-                    {{-- blogs --}}
 
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button"
@@ -71,6 +68,7 @@
                             <i class="bx bx-book-content"></i>
                             <span>Pages</span>
                         </a>
+
                         {{-- pages --}}
                         <div class="collapse menu-dropdown" id="sidebarPages">
                             <ul class="nav nav-sm flex-column">
@@ -79,19 +77,16 @@
                                         Home
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a href="{{ route('page.create', ['page' => 'about']) }}" class="nav-link">
                                         About
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a href="{{ route('page.create', ['page' => 'jobs']) }}" class="nav-link">
                                         Jobs
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a href="{{ route('page.create', ['page' => 'contact']) }}" class="nav-link">
                                         Contact
@@ -99,16 +94,15 @@
                                 </li>
                             </ul>
                         </div>
-                        {{-- pages --}}
                     </li>
 
-                    {{-- plugins --}}
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="#sidebarPlugins" data-bs-toggle="collapse" role="button"
                             aria-expanded="false" aria-controls="sidebarPlugins">
                             <i class="bx bx-star"></i>
                             <span>Plugins</span>
                         </a>
+
                         {{-- plugins --}}
                         <div class="collapse menu-dropdown" id="sidebarPlugins">
                             <ul class="nav nav-sm flex-column">
@@ -126,9 +120,9 @@
                                 @endforeach
                             </ul>
                         </div>
-                        {{-- plugins --}}
                     </li>
-                    {{-- plugins --}}
+
+                    {{-- Company --}}
                 @elseif(auth()->user()->role == 'company')
                     {{-- dashboard --}}
                     <li class="nav-item">
@@ -137,7 +131,6 @@
                             <span>Dashbord</span>
                         </a>
                     </li>
-                    {{-- dashboard --}}
 
                     {{-- jobs --}}
                     <li class="nav-item">
@@ -146,9 +139,7 @@
                             <span data-key="t-widgets">Jobs</span>
                         </a>
                     </li>
-                    {{-- jobs --}}
 
-                    {{-- plugin --}}
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="#sidebarPlugins" data-bs-toggle="collapse" role="button"
                             aria-expanded="false" aria-controls="sidebarPlugins">
@@ -172,9 +163,9 @@
                                 @endforeach
                             </ul>
                         </div>
-                        {{-- plugins --}}
                     </li>
-                    {{-- plugin --}}
+
+                    {{-- Candidate --}}
                 @elseif(auth()->user()->role == 'candidate')
                     {{-- dashboard --}}
                     <li class="nav-item">
@@ -183,7 +174,6 @@
                             <span>Dashbord</span>
                         </a>
                     </li>
-                    {{-- dashboard --}}
 
                     {{-- jobs --}}
                     <li class="nav-item">
@@ -192,7 +182,6 @@
                             <span data-key="t-widgets">Jobs</span>
                         </a>
                     </li>
-                    {{-- jobs --}}
                 @endif
             </ul>
         </div>

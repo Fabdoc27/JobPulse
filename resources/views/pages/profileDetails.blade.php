@@ -9,6 +9,7 @@
 @endsection
 
 @section('content')
+
     @if (session('error'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <p class="text-center m-0">{{ session('error') }}</p>
@@ -21,13 +22,11 @@
         </div>
     @endif
 
-
     {{-- owner --}}
     @if ($user->role === 'owner')
         <form action="{{ route('owner.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user->id }}">
-
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-6">
                     <div class="preview">
@@ -35,7 +34,6 @@
                             src="{{ $user->ownerDetails && $user->ownerDetails->img_url ? asset('uploads/' . $user->ownerDetails->img_url) : asset('assets/images/users/user-dummy-img.jpg') }}"
                             style="max-width: 120px" alt="Preview Image">
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Profile Picture</label>
                         <input type="file" class="form-control" name="img" id="featuredImage">
@@ -43,7 +41,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input type="text" class="form-control" name="name"
@@ -52,7 +49,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" value="{{ old('email', $user->email) }}">
@@ -61,7 +57,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Current Password</label>
@@ -70,7 +65,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">New Password</label>
                         <input type="password" class="form-control" name="new_password">
@@ -78,7 +72,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" name="confirm_password">
@@ -86,7 +79,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Phone</label>
                         <input type="tel" class="form-control" name="phone"
@@ -95,7 +87,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Address</label>
                         <input type="text" class="form-control" name="address"
@@ -106,7 +97,6 @@
                     </div>
                 </div>
             </div>
-
             <button type="submit" class="btn btn-primary">Update Profile</button>
         </form>
     @endif
@@ -116,7 +106,6 @@
         <form action="{{ route('company.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user->id }}">
-
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-6">
                     <div class="preview">
@@ -124,7 +113,6 @@
                             src="{{ $user->companyDetails && $user->companyDetails->img_url ? asset('uploads/' . $user->companyDetails->img_url) : asset('assets/images/users/user-dummy-img.jpg') }}"
                             style="max-width: 120px" alt="Preview Image">
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Company Logo</label>
                         <input type="file" class="form-control" name="img" id="featuredImage">
@@ -132,7 +120,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Company Name</label>
                         <input type="text" class="form-control" name="name"
@@ -141,7 +128,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" value="{{ $user->email }}" disabled readonly>
@@ -150,7 +136,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Current Password</label>
@@ -159,7 +144,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">New Password</label>
                         <input type="password" class="form-control" name="new_password">
@@ -167,7 +151,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" name="confirm_password">
@@ -175,7 +158,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Phone</label>
                         <input type="tel" class="form-control" name="phone"
@@ -184,7 +166,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Address</label>
                         <input type="text" class="form-control" name="address"
@@ -195,7 +176,6 @@
                     </div>
                 </div>
             </div>
-
             <button type="submit" class="btn btn-primary">Update Profile</button>
         </form>
     @endif
@@ -205,13 +185,11 @@
         <form action="{{ route('candidate.update') }}" method="POST" enctype="multipart/form-data"
             class="card shadow-lg p-5">
             @csrf
-
             <div class="d-flex justify-content-between">
                 <h3 class="m-3">Basic Info</h3>
                 <button type="button" class="btn btn-primary w-auto mt-3 d-inline-block" data-bs-toggle="modal"
                     data-bs-target="#previewModal">Preview Profile</button>
             </div>
-
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-6">
                     <div class="preview">
@@ -219,7 +197,6 @@
                             src="{{ $user->candidateDetails && $user->candidateDetails->img_url ? asset('uploads/' . $user->candidateDetails->img_url) : asset('assets/images/users/user-dummy-img.jpg') }}"
                             style="max-width: 120px" alt="Preview Image">
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Profile Picture</label>
                         <input type="file" class="form-control" name="img" id="featuredImage">
@@ -227,7 +204,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input type="text" class="form-control" name="name"
@@ -236,7 +212,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" value="{{ $user->email }}" disabled readonly>
@@ -245,7 +220,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Current Password</label>
@@ -254,7 +228,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">New Password</label>
                         <input type="password" class="form-control" name="new_password">
@@ -262,7 +235,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" name="confirm_password">
@@ -270,7 +242,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Phone</label>
                         <input type="tel" class="form-control" name="phone"
@@ -279,7 +250,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Address</label>
                         <input type="text" class="form-control" name="address"
@@ -291,7 +261,7 @@
                 </div>
             </div>
 
-
+            {{-- Education --}}
             <h3 class="my-5">Education</h3>
             <div id="educationContainer">
                 <div class="row d-flex justify-content-center align-items-center">
@@ -352,6 +322,7 @@
                         @endforeach
                     @endif
 
+                    {{-- Degree --}}
                     <div class="col-md-3">
                         <div class="mb-3">
                             <label class="form-label">Degree</label>
@@ -397,7 +368,6 @@
                             @enderror
                         </div>
                     </div>
-
                 </div>
             </div>
             <button type="button" class="btn btn-primary d-inline-block" onclick="addEducationField()"
@@ -405,7 +375,7 @@
                 Education
             </button>
 
-
+            {{-- Work History --}}
             <h3 class="my-5">Work Experience</h3>
             <div id="experienceContainer">
                 <div class="row d-flex justify-content-center align-items-center">
@@ -490,13 +460,12 @@
                             @enderror
                         </div>
                     </div>
-
                 </div>
             </div>
             <button type="button" class="btn btn-primary d-inline-block" onclick="addExperienceField()"
                 style="max-width: 160px">Add Experience</button>
 
-
+            {{-- Skills --}}
             <h3 class="mt-5 mb-3">Skills</h3>
             <div class="row">
                 <label class="form-label">Your Skills (add skills by comma )</label>
@@ -511,6 +480,7 @@
                 </div>
             </div>
 
+            {{-- Salary --}}
             <h3 class="mt-5 mb-3">Salary</h3>
             <div class="row">
                 <div class="col-md-6">
@@ -537,9 +507,7 @@
             </div>
             @include('pages.candidatePreview')
         </form>
-
     @endif
-
 
     <script>
         document.getElementById("featuredImage").addEventListener("change", function() {
@@ -554,9 +522,8 @@
 
         function addEducationField() {
             var newRow = document.createElement('div');
+
             newRow.className = 'row d-flex justify-content-center align-items-center';
-
-
             newRow.innerHTML = `
                 <div class="col-md-3">
                     <div class="mb-3">
@@ -590,15 +557,13 @@
                 </div>
             `;
 
-
             document.getElementById('educationContainer').appendChild(newRow);
         }
 
         function addExperienceField() {
             var newRow = document.createElement('div');
+
             newRow.className = 'row d-flex justify-content-center align-items-center';
-
-
             newRow.innerHTML = `
                     <div class="col-md-3">
                         <div class="mb-3">
@@ -637,7 +602,6 @@
                         </div>
                     </div>
             `;
-
 
             document.getElementById('experienceContainer').appendChild(newRow);
         }

@@ -27,29 +27,24 @@
                         <h4 class="fst-italic">Title</h4>
                         <p class="m-0 fs-14">{{ $job->title }}</p>
                     </div>
-
                     <div class="mb-3">
                         <h4 class="fst-italic">Category</h4>
                         <p class="m-0 fs-14">{{ ucwords($job->category) }}</p>
                     </div>
-
                     <div class="mb-3">
                         <h4 class="fst-italic">Company</h4>
                         <p class="m-0 fs-14">{{ $job->company->name }}</p>
                     </div>
-
                     <div class="mb-3">
                         <h4 class="fst-italic">Posted On :</h4>
                         <p class="m-0 fs-14">{{ $job->created_at->format('d-m-y') }}</p>
                     </div>
                 </div>
-
                 <div class="col-md-6">
                     <div class="mb-3">
                         <h4 class="fst-italic">Salary</h4>
                         <p class="m-0 fs-14">{{ $job->salary }}</p>
                     </div>
-
                     <div class="mb-3">
                         <h4 class="fst-italic">Skills</h4>
                         @foreach ($job->skills as $skill)
@@ -58,12 +53,10 @@
                             @endif
                         @endforeach
                     </div>
-
                     <div class="mb-3">
                         <h4 class="fst-italic">Location</h4>
                         <p class="m-0 badge bg-success fs-14">{{ ucwords($job->location) }}</p>
                     </div>
-
                     <div class="mb-3">
                         <h4 class="fst-italic">Deadline</h4>
                         <p class="m-0 fs-14">{{ (new DateTime($job->deadline))->format('d-m-Y') }}</p>
@@ -78,7 +71,6 @@
                     </div>
                 </div>
             </div>
-
             @if ($isApplied)
                 <button class="btn btn-success" disabled>Applied</button>
             @else

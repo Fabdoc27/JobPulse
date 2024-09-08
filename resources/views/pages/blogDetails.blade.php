@@ -11,7 +11,6 @@
                 <div class="w-75 ratio ratio-16x9 mb-4 mx-auto">
                     <img class="rounded img-fluid" src="{{ asset('blogs/' . $blog->img_url) }}" alt="Blog Image">
                 </div>
-
                 <h3 class="mb-3">Title : {{ $blog->title }}</h3>
                 <p class="fs-15 fw-medium">Tags :
                     @foreach ($blog->tags as $tags)

@@ -30,12 +30,10 @@
                         </div>
                     @endif
 
-
                     <h2 class="text-center">Verify Otp</h2>
                     <form action="{{ route('otpSubmit') }}" method="POST">
                         @csrf
                         <input type="hidden" name="email" value="{{ request()->query('email') }}">
-
                         <div class="col-lg-12 py-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
                                 <input type="number" name="otp" class="form-control" placeholder="Enter your otp ">
@@ -49,7 +47,6 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
-
                         </div>
                     </form>
                 </div>

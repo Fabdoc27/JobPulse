@@ -25,13 +25,11 @@
             <div class="col-md-6">
                 @csrf
                 <input type="hidden" name="page_name" value="{{ $page }}">
-
                 <div class="preview ratio ratio-16x9 mb-4">
                     <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid"
                         src="{{ $pageContent->img_url ?? asset('assets/images/dummy_placeholder.png') }}"
                         alt="Banner Image">
                 </div>
-
                 <div class="mb-3">
                     <label class="form-label">Banner Image</label>
                     <input type="file" class="form-control" name="img" id="featuredImage">
@@ -49,7 +47,6 @@
                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-
                 <div class="mb-3">
                     <label class="form-label">Description</label>
                     <textarea type="text" class="form-control" rows="6" name="description">{{ old('description', $pageContent->description ?? '') }}</textarea>
@@ -65,7 +62,6 @@
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label class="form-label">Our Vision</label>
                         <textarea type="text" class="form-control" rows="6" name="vision">{{ old('vision', $pageContent->vision ?? '') }}</textarea>

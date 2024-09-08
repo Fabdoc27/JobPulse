@@ -23,7 +23,6 @@
             </div>
         @endif
     </section>
-
     <section>
         @if ($topCompanies)
             <div class="container">
@@ -50,7 +49,6 @@
             </div>
         @endif
     </section>
-
     <section>
         <div class="container">
             <div class="row g-0">
@@ -67,7 +65,6 @@
                     </div>
                 </div>
             </div>
-
             @if ($latestJobs->isNotEmpty())
                 @foreach ($latestJobs as $job)
                     <div class="card mb-3 shadow p-3">
@@ -81,7 +78,6 @@
                                     <span class="badge bg-primary fs-6">{{ ucwords($skill) }}</span>
                                 @endforeach
                             </div>
-
                             <div class="col-md-4 d-flex justify-content-center align-items-center gap-2">
                                 <div>
                                     <a href="{{ route('jobs.details', ['job' => $job->id]) }}"
@@ -98,7 +94,6 @@
                         </div>
                     </div>
                 @endforeach
-
                 <div class="row d-flex justify-content-center py-3">
                     <a href="{{ route('jobs') }}" class="btn btn-primary d-inline-block text-center"
                         style="max-width: 120px">

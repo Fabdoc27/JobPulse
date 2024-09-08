@@ -17,7 +17,6 @@
                     <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid"
                         src="{{ asset('assets/images/dummy_placeholder.png') }}" alt="Banner Image">
                 </div>
-
                 <div class="mb-3">
                     <label class="form-label">Banner Image</label>
                     <input type="file" class="form-control" name="img" id="featuredImage">
@@ -34,7 +33,6 @@
                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                     @enderror
                 </div>
-
                 <div class="mb-3">
                     <label class="form-label">Tags (add tags by comma )</label>
                     <input type="text" class="form-control" name="tags" value="{{ old('skills') }}">
@@ -43,7 +41,6 @@
                     @enderror
                 </div>
             </div>
-
             <div class="row">
                 <div class="mb-3">
                     <label class="form-label">

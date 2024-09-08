@@ -12,7 +12,6 @@
     <form action="{{ route('plugin.update', $plugin) }}" method="POST">
         <div class="col-md-6">
             @csrf
-
             <div class="mb-3">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-control" name="name" value="{{ old('name', $plugin->name) }}">
@@ -20,7 +19,6 @@
                     <p class="text-danger text-center mt-2">{{ $message }}</p>
                 @enderror
             </div>
-
             <div class="mb-3">
                 <label class="form-label">
                     Features (press Enter to add a line break )

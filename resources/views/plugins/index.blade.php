@@ -28,7 +28,6 @@
                     <div class="card shadow-lg p-3">
                         <h4 class="m-0">{{ $plugin->name }}</h4>
                         <p class="my-3">{!! nl2br(e($plugin->features)) !!}</p>
-
                         <div class="d-flex gap-2 align-items-center">
                             <div class="d-flex gap-2 align-items-center">
                                 <a href="{{ route('plugin.edit', $plugin) }}" class="d-inline-block btn btn-primary">
@@ -81,22 +80,18 @@
                     <div class="card shadow-lg p-3">
                         <h4 class="m-0">{{ $plugin->name }}</h4>
                         <p class="my-3">{!! nl2br(e($plugin->features)) !!}</p>
-
                         <div class="d-flex gap-2 align-items-center">
                             <div class="d-flex gap-2 align-items-center">
-
                                 <form action="{{ route('plugin.status', ['plugin' => $plugin]) }}" method="POST">
                                     @csrf
                                     @method('POST')
                                     <input type="hidden" name="plugin_id" value="{{ $plugin->id }}">
-
                                     @if ($companyData['activePlugins']->contains($plugin->id))
                                         <button type="submit" class="btn btn-danger">Deactivate</button>
                                     @else
                                         <button type="submit" class="btn btn-success">Activate</button>
                                     @endif
                                 </form>
-
                             </div>
                         </div>
                     </div>

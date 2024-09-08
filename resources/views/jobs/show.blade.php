@@ -48,6 +48,7 @@
                 <p class="m-0 fs-14">{{ (new DateTime($job->deadline))->format('d-m-Y') }}</p>
             </div>
 
+            {{-- Owner --}}
             @if ($user->role === 'owner')
                 <form action="{{ route('jobs.updateStatus') }}" method="POST">
                     @csrf

@@ -34,7 +34,6 @@
                     <form action="{{ route('passwordSubmit') }}" method="POST">
                         @csrf
                         <input type="hidden" name="email" value="{{ request()->query('email') }}">
-
                         <div class="col-lg-12 py-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
                                 <input type="password" class="form-control" name="password"
@@ -45,7 +44,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="col-lg-12 py-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
                                 <input type="password" class="form-control" name="password_confirmation"
@@ -56,7 +54,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="col-lg-12">
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
