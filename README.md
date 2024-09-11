@@ -1,48 +1,50 @@
 # Job Pulse
 
----
-
 This project works with Laravel 10.x, PHP 8.1 or higher, and a MySQL database.
 
 ## Getting Started
 
-It's super easy to setup.
+Follow these steps to set up the project:
 
-First, clone the project and change the directory
+1. **Clone the repository and navigate to the directory:**
 
-```shell
-git clone git@github.com:Fabdoc27/job_pulse.git
-cd job_pulse
-```
+    ```shell
+    git clone git@github.com:Fabdoc27/JobPulse.git
+    cd JobPulse
+    ```
 
-Then follow the process.
+2. **Install the dependencies:**
 
-1. Install the dependencies
+    ```shell
+    composer install
+    ```
 
-```shell
-composer install
-```
+3. **Create the environment file:**
 
-2. Copy `.env.example` to `.env`
+    ```shell
+    cp .env.example .env
+    ```
 
-```shell
-cp .env.example .env
-```
+4. **Generate the application key:**
 
-3. Generate application key
+    ```shell
+    php artisan key:generate
+    ```
 
-```shell
-php artisan key:generate
-```
+5. **Run the database migrations:**
 
-4. Run the migration and seeders together
+    ```shell
+    php artisan migrate
+    ```
 
-```shell
-php artisan migrate:fresh --seed
-```
+6. **Seed the database:**
 
-5. Start the webserver
+    ```shell
+    php artisan db:seed
+    ```
 
-```shell
-php artisan serve
-```
+7. **Start the development server:**
+
+    ```shell
+    php artisan serve
+    ```
