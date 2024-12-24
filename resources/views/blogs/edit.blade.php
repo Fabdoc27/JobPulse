@@ -14,8 +14,7 @@
             <div class="col-md-6">
                 @csrf
                 <div class="preview ratio ratio-16x9 mb-4">
-                    <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid"
-                        src="{{ asset('blogs/' . ($blog->img_url ?? 'assets/images/dummy_placeholder.png')) }}"
+                    <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid" src="{{ asset('blogs/' . ($blog->img_url ?? 'assets/images/dummy_placeholder.png')) }}"
                         alt="Blog Image">
                 </div>
                 <div class="mb-3">
@@ -29,16 +28,14 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title"
-                        value="{{ old('title', $blog->title ?? '') }}">
+                    <input type="text" class="form-control" name="title" value="{{ old('title', $blog->title ?? '') }}">
                     @error('title')
                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Tags (add tags by comma )</label>
-                    <input type="text" class="form-control" name="tags"
-                        value="{{ old('skills', implode(', ', $blog->tags ?? [])) }}">
+                    <input type="text" class="form-control" name="tags" value="{{ old('skills', implode(', ', $blog->tags ?? [])) }}">
                     @error('tags')
                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                     @enderror

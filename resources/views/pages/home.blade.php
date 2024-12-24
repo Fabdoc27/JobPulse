@@ -33,13 +33,11 @@
                             @foreach ($topCompanies as $company)
                                 <div class="mx-3 d-flex align-items-center">
                                     @if ($company->img_url)
-                                        <img class="rounded object-fit-cover"
-                                            src="{{ asset('uploads/' . $company->img_url) }}"
-                                            style="height:150px; width:250px;" alt="{{ $company->name }}">
+                                        <img class="rounded object-fit-cover" src="{{ asset('uploads/' . $company->img_url) }}" style="height:150px; width:250px;"
+                                            alt="{{ $company->name }}">
                                     @else
-                                        <img class="rounded object-fit-cover"
-                                            src="{{ asset('assets/images/dummyLogo.png') }}"
-                                            style="height:150px; width:250px;" alt="Placeholder Image">
+                                        <img class="rounded object-fit-cover" src="{{ asset('assets/images/dummyLogo.png') }}" style="height:150px; width:250px;"
+                                            alt="Placeholder Image">
                                     @endif
                                 </div>
                             @endforeach
@@ -57,8 +55,7 @@
                     <div class="mt-2 mb-2 d-flex flex-wrap justify-content-center">
                         @foreach ($jobCategories as $category)
                             <div>
-                                <a href="{{ route('homepage', ['category' => $category]) }}"
-                                    class="btn btn-primary d-inline-block fs-12 me-3">{{ ucwords($category) }}
+                                <a href="{{ route('homepage', ['category' => $category]) }}" class="btn btn-primary d-inline-block fs-12 me-3">{{ ucwords($category) }}
                                 </a>
                             </div>
                         @endforeach
@@ -72,7 +69,7 @@
                             <div class="col-md-8">
                                 <h4 class="d-inline m-0">{{ ucwords($job->title) }}</h4>
                                 <span class="badge bg-success ms-2 fs-6">{{ ucwords($job->location) }}</span>
-                                <p class="mt-1 mb-1 fw-semibold">Comapny : {{ ucwords($job->company->name) }}</p>
+                                <p class="mt-1 mb-1 fw-semibold">Company : {{ ucwords($job->company->name) }}</p>
                                 <p class="mt-1 mb-2 fw-semibold">Posted On : {{ $job->created_at->format('d-m-y') }}</p>
                                 @foreach ($job->skills as $skill)
                                     <span class="badge bg-primary fs-6">{{ ucwords($skill) }}</span>
@@ -80,8 +77,7 @@
                             </div>
                             <div class="col-md-4 d-flex justify-content-center align-items-center gap-2">
                                 <div>
-                                    <a href="{{ route('jobs.details', ['job' => $job->id]) }}"
-                                        class="d-inline-block btn btn-info">
+                                    <a href="{{ route('jobs.details', ['job' => $job->id]) }}" class="d-inline-block btn btn-info">
                                         View
                                     </a>
                                 </div>
@@ -95,10 +91,9 @@
                     </div>
                 @endforeach
                 <div class="row d-flex justify-content-center py-3">
-                    <a href="{{ route('jobs') }}" class="btn btn-primary d-inline-block text-center"
-                        style="max-width: 120px">
-                        View
-                        More</a>
+                    <a href="{{ route('jobs') }}" class="btn btn-primary d-inline-block text-center" style="max-width: 120px">
+                        View More
+                    </a>
                 </div>
             @endif
         </div>

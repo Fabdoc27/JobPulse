@@ -45,14 +45,12 @@
         @foreach ($companies as $company)
             {{-- Confirmation Modal --}}
             <div class="col-md-12">
-                <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Confirm Deletion</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 Are you sure you want to delete this company?
@@ -73,8 +71,7 @@
                 <div class="card mb-3 shadow p-3">
                     <div class="row d-flex justify-content-center align-items-center">
                         <div class="col-md-2 d-flex justify-content-center align-items-center">
-                            <img class="rounded" src="{{ asset('uploads/' . $company->img_url) }}"
-                                style="width: 150px; height:100px;" alt="{{ $company->name }}">
+                            <img class="rounded" src="{{ asset('uploads/' . $company->img_url) }}" style="width: 150px; height:100px;" alt="{{ $company->name }}">
                         </div>
                         <div class="col-md-5">
                             <h5 class="card-title">{{ ucwords($company->name) }}</h5>
@@ -82,8 +79,7 @@
                         </div>
                         <div class="col-md-5 d-flex justify-content-center align-items-center gap-2">
                             <a href="{{ route('company.show', $company->id) }}" class="btn btn-primary">View</a>
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#confirmationModal">Delete
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmationModal">Delete
                             </button>
                         </div>
                     </div>

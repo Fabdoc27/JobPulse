@@ -26,8 +26,7 @@
                 @csrf
                 <input type="hidden" name="page_name" value="{{ $page }}">
                 <div class="preview ratio ratio-16x9 mb-4">
-                    <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid"
-                        src="{{ $pageContent->img_url ?? asset('assets/images/dummy_placeholder.png') }}"
+                    <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid" src="{{ $pageContent->img_url ?? asset('assets/images/dummy_placeholder.png') }}"
                         alt="Banner Image">
                 </div>
                 <div class="mb-3">
@@ -41,8 +40,7 @@
             <div class="row">
                 <div class="mb-3">
                     <label class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title"
-                        value="{{ old('title', $pageContent->title ?? '') }}">
+                    <input type="text" class="form-control" name="title" value="{{ old('title', $pageContent->title ?? '') }}">
                     @error('title')
                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                     @enderror
@@ -61,14 +59,13 @@
                         @error('history')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Our Vision</label>
-                        <textarea type="text" class="form-control" rows="6" name="vision">{{ old('vision', $pageContent->vision ?? '') }}</textarea>
-                        @error('vision')
-                            <p class="text-danger text-center mt-2">{{ $message }}</p>
-                        @enderror
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label">Our Vision</label>
+                            <textarea type="text" class="form-control" rows="6" name="vision">{{ old('vision', $pageContent->vision ?? '') }}</textarea>
+                            @error('vision')
+                                <p class="text-danger text-center mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
                 @endif
             </div>
             <button type="submit" class="btn btn-primary">Save</button>

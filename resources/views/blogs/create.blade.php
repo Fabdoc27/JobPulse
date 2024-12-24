@@ -14,8 +14,7 @@
             <div class="col-md-6">
                 @csrf
                 <div class="preview ratio ratio-16x9 mb-4">
-                    <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid"
-                        src="{{ asset('assets/images/dummy_placeholder.png') }}" alt="Banner Image">
+                    <img id="featuredImageDisplay" class="my-3 d-block rounded img-fluid" src="{{ asset('assets/images/dummy_placeholder.png') }}" alt="Banner Image">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Banner Image</label>

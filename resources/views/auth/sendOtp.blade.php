@@ -59,8 +59,7 @@
                         @csrf
                         <div class="col-lg-12 py-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="email" name="email" class="form-control"
-                                    placeholder="Enter your email ">
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email ">
                                 <label>Email Address</label>
                             </div>
                             @error('email')

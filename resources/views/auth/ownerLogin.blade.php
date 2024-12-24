@@ -18,8 +18,7 @@
                     @if (session('error'))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <p class="text-center m-0">{{ session('error') }}</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
 
@@ -28,16 +27,14 @@
                         @csrf
                         <div class="col-lg-12 pt-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="email" name="email" value="owner@admin.com" class="form-control"
-                                    placeholder="Enter your email">
+                                <input type="email" name="email" value="owner@admin.com" class="form-control" placeholder="Enter your email">
                                 <label>Email Address</label>
                             </div>
                             @error('email')
                                 <p class="text-danger text-center mt-2">{{ $message }}</p>
                             @enderror
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="password" value="password" name="password" class="form-control"
-                                    placeholder="Enter your password border border-black">
+                                <input type="password" value="password" name="password" class="form-control" placeholder="Enter your password border border-black">
                                 <label>Password</label>
                             </div>
                             @error('password')
@@ -58,12 +55,10 @@
                     </form>
                     <div class="row justify-content-center mt-3 text-center">
                         <div class="col-md-6">
-                            <a href="{{ route('company.login') }}" class="btn btn-primary d-inline-block">Login As
-                                Company</a>
+                            <a href="{{ route('company.login') }}" class="btn btn-primary d-inline-block">Login As Company</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ route('candidate.login') }}" class="btn btn-primary d-inline-block">Login As
-                                Candidate</a>
+                            <a href="{{ route('candidate.login') }}" class="btn btn-primary d-inline-block">Login As Candidate</a>
                         </div>
                     </div>
                 </div>

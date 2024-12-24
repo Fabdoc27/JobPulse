@@ -19,14 +19,12 @@
                     @if (session('error'))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <p class="text-center m-0">{{ session('error') }}</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @elseif(session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">
                             <p class="text-center m-0">{{ session('success') }}</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
 
@@ -36,8 +34,7 @@
                         <input type="hidden" name="email" value="{{ request()->query('email') }}">
                         <div class="col-lg-12 py-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="password" class="form-control" name="password"
-                                    placeholder="Enter your new password">
+                                <input type="password" class="form-control" name="password" placeholder="Enter your new password">
                                 <label class="form-label">New Password</label>
                                 @error('password')
                                     <p class="text-danger text-center mt-2">{{ $message }}</p>
@@ -46,8 +43,7 @@
                         </div>
                         <div class="col-lg-12 py-3">
                             <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
-                                <input type="password" class="form-control" name="password_confirmation"
-                                    placeholder="Enter your new password again">
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="Enter your new password again">
                                 <label class="form-label">Confirm Password</label>
                                 @error('password_confirmation')
                                     <p class="text-danger text-center mt-2">{{ $message }}</p>

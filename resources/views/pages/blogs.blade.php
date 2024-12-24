@@ -12,8 +12,7 @@
                     <div class="col-md-4 offset-md-8">
                         <form action="{{ route('blogs') }}" method="GET" class="mb-3">
                             <div class="input-group border border-dark-subtle border-1 rounded">
-                                <input type="text" name="search" class="form-control"
-                                    placeholder="Search by title or tags">
+                                <input type="text" name="search" class="form-control" placeholder="Search by title or tags">
                                 <button type="submit" class="btn btn-primary">Search</button>
                             </div>
                         </form>

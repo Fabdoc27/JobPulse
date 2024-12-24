@@ -60,8 +60,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="#" class="btn d-inline-block open-modal" data-blog-id="{{ $blog->id }}"
-                                data-bs-toggle="modal" data-bs-target="#deleteBlogModal">
+                            <a href="#" class="btn d-inline-block open-modal" data-blog-id="{{ $blog->id }}" data-bs-toggle="modal" data-bs-target="#deleteBlogModal">
                                 <i class="bx bx-trash" style="font-size: 28px ; color:black"></i>
                             </a>
                         </div>

@@ -38,8 +38,7 @@
                     </p>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center align-items-center">
-                    <button class="btn btn-secondary me-2" data-bs-toggle="modal"
-                        data-bs-target="#previewModal{{ $applicant->id }}">
+                    <button class="btn btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#previewModal{{ $applicant->id }}">
                         Details
                     </button>
                     <form action="{{ route('job.selection') }}" method="POST">
@@ -70,8 +69,7 @@
         </div>
 
         {{-- Candidate Modal --}}
-        <div class="modal fade" id="previewModal{{ $applicant->id }}" tabindex="-1" aria-labelledby="previewModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="previewModal{{ $applicant->id }}" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -82,8 +80,8 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="mb-3">
-                                    <img src="{{ $applicant->img_url ? asset('uploads/' . $applicant->img_url) : asset('assets/images/users/user-dummy-img.jpg') }}"
-                                        class="rounded" style="max-width: 150px" alt="candidate_image">
+                                    <img src="{{ $applicant->img_url ? asset('uploads/' . $applicant->img_url) : asset('assets/images/users/user-dummy-img.jpg') }}" class="rounded"
+                                        style="max-width: 150px" alt="candidate_image">
                                 </div>
                                 <div class="mb-3">
                                     <h6>Name</h6>

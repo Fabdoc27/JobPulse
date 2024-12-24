@@ -33,8 +33,7 @@
                                 <a href="{{ route('plugin.edit', $plugin) }}" class="d-inline-block btn btn-primary">
                                     Edit
                                 </a>
-                                <a href="#" class="btn d-inline-block btn-danger delete-btn"
-                                    data-plugin-id="{{ $plugin->id }}" data-bs-toggle="modal"
+                                <a href="#" class="btn d-inline-block btn-danger delete-btn" data-plugin-id="{{ $plugin->id }}" data-bs-toggle="modal"
                                     data-bs-target="#confirmDeleteModal">
                                     Delete
                                 </a>
@@ -49,8 +48,7 @@
         </a>
         @foreach ($plugins as $plugin)
             {{-- delete modal --}}
-            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
-                aria-hidden="true">
+            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">

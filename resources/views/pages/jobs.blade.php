@@ -31,8 +31,7 @@
                     <div class="mt-2 mb-2 d-flex flex-wrap">
                         @foreach ($jobCategories as $category)
                             <div>
-                                <a href="{{ route('jobs', ['category' => $category]) }}"
-                                    class="btn btn-primary d-inline-block fs-12 me-3">{{ ucwords($category) }}
+                                <a href="{{ route('jobs', ['category' => $category]) }}" class="btn btn-primary d-inline-block fs-12 me-3">{{ ucwords($category) }}
                                 </a>
                             </div>
                         @endforeach

@@ -100,18 +100,15 @@
                                 @csrf
                                 <div class="col-lg-12">
                                     <div class="form-floating border border-dark-subtle border-1 rounded  mb-3">
-                                        <input type="text" class="form-control" name="name"
-                                            placeholder="Enter your name">
+                                        <input type="text" class="form-control" name="name" placeholder="Enter your name">
                                         <label>Your Name</label>
                                     </div>
                                     <div class="form-floating border border-dark-subtle border-1 rounded  mb-3">
-                                        <input type="email" name="email" class="form-control"
-                                            placeholder="Enter your email">
+                                        <input type="email" name="email" class="form-control" placeholder="Enter your email">
                                         <label>Email Address</label>
                                     </div>
                                     <div class="form-floating border rounded border-dark-subtle border-1 mb-3">
-                                        <input type="text" name="subject" class="form-control"
-                                            placeholder="Enter your subject">
+                                        <input type="text" name="subject" class="form-control" placeholder="Enter your subject">
                                         <label>Subject</label>
                                     </div>
                                     <div class="form-floating border border-dark-subtle border-1 rounded mb-3">
@@ -137,13 +134,11 @@
                             @foreach ($topCompanies as $company)
                                 <div class="mx-3 d-flex align-items-center">
                                     @if ($company->img_url)
-                                        <img class="rounded object-fit-cover"
-                                            src="{{ asset('uploads/' . $company->img_url) }}"
-                                            style="height:150px; width:250px;" alt="{{ $company->name }}">
+                                        <img class="rounded object-fit-cover" src="{{ asset('uploads/' . $company->img_url) }}" style="height:150px; width:250px;"
+                                            alt="{{ $company->name }}">
                                     @else
-                                        <img class="rounded object-fit-cover"
-                                            src="{{ asset('assets/images/dummyLogo.png') }}"
-                                            style="height:150px; width:250px;" alt="Placeholder Image">
+                                        <img class="rounded object-fit-cover" src="{{ asset('assets/images/dummyLogo.png') }}" style="height:150px; width:250px;"
+                                            alt="Placeholder Image">
                                     @endif
                                 </div>
                             @endforeach

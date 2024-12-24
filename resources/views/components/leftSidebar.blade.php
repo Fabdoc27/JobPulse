@@ -6,17 +6,13 @@
         <a href="{{ route('dashboard') }}" class="fs-3 fst-italic py-3  d-inline-block">
             <span class="fw-bold w-100 px-2"
                 style=" background: linear-gradient(to right, #ff0057, #8a3ab9);
-                -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            ">
+                -webkit-background-clip: text; background-clip: text; color: transparent;">
                 Job Pulse
             </span>
         </a>
         {{-- light logo --}}
 
-        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
-            id="vertical-hover">
+        <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
             <i class="ri-record-circle-line"></i>
         </button>
     </div>
@@ -34,7 +30,7 @@
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="{{ route('dashboard') }}">
                             <i data-feather="home" class="icon-dual"></i>
-                            <span>Dashbord</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
 
@@ -63,8 +59,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="sidebarPages">
+                        <a class="nav-link menu-link" href="#sidebarPages" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPages">
                             <i class="bx bx-book-content"></i>
                             <span>Pages</span>
                         </a>
@@ -97,8 +92,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarPlugins" data-bs-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="sidebarPlugins">
+                        <a class="nav-link menu-link" href="#sidebarPlugins" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPlugins">
                             <i class="bx bx-star"></i>
                             <span>Plugins</span>
                         </a>
@@ -128,7 +122,7 @@
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="{{ route('dashboard') }}">
                             <i data-feather="home" class="icon-dual"></i>
-                            <span>Dashbord</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
 
@@ -141,8 +135,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="#sidebarPlugins" data-bs-toggle="collapse" role="button"
-                            aria-expanded="false" aria-controls="sidebarPlugins">
+                        <a class="nav-link menu-link" href="#sidebarPlugins" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarPlugins">
                             <i class="bx bx-star"></i>
                             <span>Plugins</span>
                         </a>
@@ -171,7 +164,7 @@
                     <li class="nav-item">
                         <a class="nav-link menu-link" href="{{ route('dashboard') }}">
                             <i data-feather="home" class="icon-dual"></i>
-                            <span>Dashbord</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
 

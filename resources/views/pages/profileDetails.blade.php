@@ -43,8 +43,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name"
-                            value="{{ old('name', $user->ownerDetails->name ?? '') }}">
+                        <input type="text" class="form-control" name="name" value="{{ old('name', $user->ownerDetails->name ?? '') }}">
                         @error('name')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -81,16 +80,14 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone</label>
-                        <input type="tel" class="form-control" name="phone"
-                            value="{{ old('phone', $user->ownerDetails->phone ?? '') }}">
+                        <input type="tel" class="form-control" name="phone" value="{{ old('phone', $user->ownerDetails->phone ?? '') }}">
                         @error('phone')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control" name="address"
-                            value="{{ old('address', $user->ownerDetails->address ?? '') }}">
+                        <input type="text" class="form-control" name="address" value="{{ old('address', $user->ownerDetails->address ?? '') }}">
                         @error('address')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -122,8 +119,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Company Name</label>
-                        <input type="text" class="form-control" name="name"
-                            value="{{ old('name', $user->companyDetails->name ?? '') }}">
+                        <input type="text" class="form-control" name="name" value="{{ old('name', $user->companyDetails->name ?? '') }}">
                         @error('name')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -160,16 +156,14 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone</label>
-                        <input type="tel" class="form-control" name="phone"
-                            value="{{ old('phone', $user->companyDetails->phone ?? '') }}">
+                        <input type="tel" class="form-control" name="phone" value="{{ old('phone', $user->companyDetails->phone ?? '') }}">
                         @error('phone')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control" name="address"
-                            value="{{ old('address', $user->companyDetails->address ?? '') }}">
+                        <input type="text" class="form-control" name="address" value="{{ old('address', $user->companyDetails->address ?? '') }}">
                         @error('address')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -182,13 +176,11 @@
 
     {{-- candidate --}}
     @if ($user->role === 'candidate')
-        <form action="{{ route('candidate.update') }}" method="POST" enctype="multipart/form-data"
-            class="card shadow-lg p-5">
+        <form action="{{ route('candidate.update') }}" method="POST" enctype="multipart/form-data" class="card shadow-lg p-5">
             @csrf
             <div class="d-flex justify-content-between">
                 <h3 class="m-3">Basic Info</h3>
-                <button type="button" class="btn btn-primary w-auto mt-3 d-inline-block" data-bs-toggle="modal"
-                    data-bs-target="#previewModal">Preview Profile</button>
+                <button type="button" class="btn btn-primary w-auto mt-3 d-inline-block" data-bs-toggle="modal" data-bs-target="#previewModal">Preview Profile</button>
             </div>
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-6">
@@ -206,8 +198,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name"
-                            value="{{ old('name', $user->candidateDetails->name ?? '') }}">
+                        <input type="text" class="form-control" name="name" value="{{ old('name', $user->candidateDetails->name ?? '') }}">
                         @error('name')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -244,16 +235,14 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Phone</label>
-                        <input type="tel" class="form-control" name="phone"
-                            value="{{ old('phone', $user->candidateDetails->phone ?? '') }}">
+                        <input type="tel" class="form-control" name="phone" value="{{ old('phone', $user->candidateDetails->phone ?? '') }}">
                         @error('phone')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <input type="text" class="form-control" name="address"
-                            value="{{ old('address', $user->candidateDetails->address ?? '') }}">
+                        <input type="text" class="form-control" name="address" value="{{ old('address', $user->candidateDetails->address ?? '') }}">
                         @error('address')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -272,8 +261,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Degree</label>
-                                    <input type="text" class="form-control" name="degree[]"
-                                        value="{{ $educationHistory->degree ?? '' }}">
+                                    <input type="text" class="form-control" name="degree[]" value="{{ $educationHistory->degree ?? '' }}">
                                     @error('degree')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -282,8 +270,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Institution</label>
-                                    <input type="text" class="form-control" name="institution[]"
-                                        value="{{ $educationHistory->institution ?? '' }}">
+                                    <input type="text" class="form-control" name="institution[]" value="{{ $educationHistory->institution ?? '' }}">
                                     @error('institution')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -292,8 +279,7 @@
                             <div class="col-md-2">
                                 <div class="mb-3">
                                     <label class="form-label">Score</label>
-                                    <input type="text" class="form-control" name="score[]"
-                                        value="{{ $educationHistory->score ?? '' }}">
+                                    <input type="text" class="form-control" name="score[]" value="{{ $educationHistory->score ?? '' }}">
                                     @error('score')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -302,8 +288,7 @@
                             <div class="col-md-2">
                                 <div class="mb-3">
                                     <label class="form-label">Start Date</label>
-                                    <input type="date" class="form-control" name="start_date[]"
-                                        value="{{ $educationHistory->start_date ?? '' }}">
+                                    <input type="date" class="form-control" name="start_date[]" value="{{ $educationHistory->start_date ?? '' }}">
                                     @error('start_date')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -312,8 +297,7 @@
                             <div class="col-md-2">
                                 <div class="mb-3">
                                     <label class="form-label">End Date</label>
-                                    <input type="date" class="form-control" name="end_date[]"
-                                        value="{{ $educationHistory->end_date ?? '' }}">
+                                    <input type="date" class="form-control" name="end_date[]" value="{{ $educationHistory->end_date ?? '' }}">
                                     @error('end_date')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -370,8 +354,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary d-inline-block" onclick="addEducationField()"
-                style="max-width: 160px">Add
+            <button type="button" class="btn btn-primary d-inline-block" onclick="addEducationField()" style="max-width: 160px">Add
                 Education
             </button>
 
@@ -385,8 +368,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Job Title</label>
-                                    <input type="text" class="form-control" name="title[]"
-                                        value="{{ $workExperience->job_title ?? '' }}">
+                                    <input type="text" class="form-control" name="title[]" value="{{ $workExperience->job_title ?? '' }}">
                                     @error('title')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -395,8 +377,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Company</label>
-                                    <input type="text" class="form-control" name="company[]"
-                                        value="{{ $workExperience->company ?? '' }}">
+                                    <input type="text" class="form-control" name="company[]" value="{{ $workExperience->company ?? '' }}">
                                     @error('company')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -405,8 +386,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">Start Date</label>
-                                    <input type="date" class="form-control" name="work_start_date[]"
-                                        value="{{ $workExperience->start_date ?? '' }}">
+                                    <input type="date" class="form-control" name="work_start_date[]" value="{{ $workExperience->start_date ?? '' }}">
                                     @error('start_date')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -415,8 +395,7 @@
                             <div class="col-md-3">
                                 <div class="mb-3">
                                     <label class="form-label">End Date</label>
-                                    <input type="date" class="form-control" name="work_end_date[]"
-                                        value="{{ $workExperience->end_date ?? '' }}">
+                                    <input type="date" class="form-control" name="work_end_date[]" value="{{ $workExperience->end_date ?? '' }}">
                                     @error('end_date')
                                         <p class="text-danger text-center mt-2">{{ $message }}</p>
                                     @enderror
@@ -462,8 +441,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary d-inline-block" onclick="addExperienceField()"
-                style="max-width: 160px">Add Experience</button>
+            <button type="button" class="btn btn-primary d-inline-block" onclick="addExperienceField()" style="max-width: 160px">Add Experience</button>
 
             {{-- Skills --}}
             <h3 class="mt-5 mb-3">Skills</h3>
@@ -486,8 +464,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Current Salary</label>
-                        <input type="number" class="form-control" name="current_salary"
-                            value="{{ old('current_salary', $user->candidateDetails->current_salary ?? '') }}">
+                        <input type="number" class="form-control" name="current_salary" value="{{ old('current_salary', $user->candidateDetails->current_salary ?? '') }}">
                         @error('current_salary')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror
@@ -496,8 +473,7 @@
                 <div class="col-md-6">
                     <div class="mb-3">
                         <label class="form-label">Expected Salary</label>
-                        <input type="number" class="form-control" name="expected_salary"
-                            value="{{ old('expected_salary', $user->candidateDetails->expected_salary ?? '') }}">
+                        <input type="number" class="form-control" name="expected_salary" value="{{ old('expected_salary', $user->candidateDetails->expected_salary ?? '') }}">
                         @error('expected_salary')
                             <p class="text-danger text-center mt-2">{{ $message }}</p>
                         @enderror

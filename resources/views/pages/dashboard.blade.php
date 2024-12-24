@@ -28,7 +28,7 @@
             <div class="col-md-4">
                 <div class="card shadow-lg">
                     <div class="card-body">
-                        <h4>Inctive Companies</h4>
+                        <h4>Inactive Companies</h4>
                         <h2>{{ $data['inactiveCompanies'] }}</h2>
                     </div>
                 </div>

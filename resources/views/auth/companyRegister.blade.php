@@ -18,8 +18,7 @@
                     @if (session('error'))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <p class="text-center m-0">{{ session('error') }}</p>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
 
@@ -73,9 +72,7 @@
                     </form>
                     <div class="row justify-content-center mt-4 text-center">
                         <div class="col-md-6">
-                            <a href="{{ route('candidate.register') }}" class="btn btn-primary d-inline-block">Register
-                                As
-                                Candidate</a>
+                            <a href="{{ route('candidate.register') }}" class="btn btn-primary d-inline-block">Register As Candidate</a>
                         </div>
                     </div>
                 </div>

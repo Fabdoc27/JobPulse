@@ -49,8 +49,7 @@
                     <div class="mt-2 mb-2 d-flex flex-wrap">
                         @foreach ($jobCategories as $category)
                             <div class="me-3">
-                                <a href="{{ route('jobs.index', ['category' => $category]) }}"
-                                    class="btn btn-primary d-inline-block fs-12">{{ ucwords($category) }}
+                                <a href="{{ route('jobs.index', ['category' => $category]) }}" class="btn btn-primary d-inline-block fs-12">{{ ucwords($category) }}
                                 </a>
                             </div>
                         @endforeach
@@ -85,8 +84,7 @@
                                 </a>
                             </div>
                             <div>
-                                <a href="#" class="btn d-inline-block open-modal" data-bs-toggle="modal"
-                                    data-bs-target="#deleteJobModal" data-job-id="{{ $job->id }}">
+                                <a href="#" class="btn d-inline-block open-modal" data-bs-toggle="modal" data-bs-target="#deleteJobModal" data-job-id="{{ $job->id }}">
                                     <i class="bx bx-trash" style="font-size: 28px; color: black"></i>
                                 </a>
                             </div>
@@ -136,8 +134,7 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <button type="button" class="btn btn-link" data-bs-toggle="modal"
-                                        data-bs-target="#deleteJobModal">
+                                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#deleteJobModal">
                                         <i class="bx bx-trash" style="font-size: 28px ; color:black"></i>
                                     </button>
                                 </div>

@@ -19,6 +19,16 @@ class User extends Authenticatable
         'otp',
     ];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
     public function ownerDetails()
     {
         return $this->hasOne(OwnerDetail::class);
@@ -33,14 +43,4 @@ class User extends Authenticatable
     {
         return $this->hasOne(CandidateDetail::class, 'user_id');
     }
-
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
 }

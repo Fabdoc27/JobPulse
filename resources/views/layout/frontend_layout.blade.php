@@ -18,16 +18,11 @@
             <div class="container">
                 <a href="{{ route('homepage') }}" class="fs-3 fst-italic py-3 d-inline-block">
                     <span class="fw-bold w-100 px-2"
-                        style=" background: linear-gradient(to right, #ff0057, #8a3ab9);
-                        -webkit-background-clip: text;
-                    background-clip: text;
-                    color: transparent;
-                    ">
+                        style="background: linear-gradient(to right, #ff0057, #8a3ab9); -webkit-background-clip: text; background-clip: text; color: transparent;">
                         Job Pulse
                     </span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -46,8 +41,7 @@
                             <a class="nav-link fw-semibold" aria-current="page" href="{{ route('blogs') }}">Blogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold" aria-current="page"
-                                href="{{ route('contact') }}">Contact</a>
+                            <a class="nav-link fw-semibold" aria-current="page" href="{{ route('contact') }}">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -64,8 +58,7 @@
                     @guest
                         <div>
                             <a href="{{ route('candidate.login') }}" class="btn btn-primary d-inline-block ms-2">Login</a>
-                            <a href="{{ route('candidate.register') }}"
-                                class="btn btn-primary d-inline-block ms-2">Register</a>
+                            <a href="{{ route('candidate.register') }}" class="btn btn-primary d-inline-block ms-2">Register</a>
                         </div>
                     @endguest
                 </div>
@@ -76,10 +69,9 @@
     @yield('page-content')
 
     <footer>
-        <p class="text-center py-5 fs-16 bg-light">© {{ date('Y') }} Job Pulse | All rights reserved | Designed &
-            Developed
-            by
-            Ashraful Karim</p>
+        <p class="text-center py-5 fs-16 bg-light">
+            © {{ date('Y') }} Job Pulse | All rights reserved | Designed & Developed by Ashraful Karim
+        </p>
     </footer>
 
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

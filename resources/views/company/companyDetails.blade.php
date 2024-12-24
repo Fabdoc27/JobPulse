@@ -20,11 +20,9 @@
 
             <div class="card shadow px-5 py-3">
                 @if ($company->img_url)
-                    <img src="{{ asset('uploads/' . $company->img_url) }}" style="max-width: 100px" alt="Company Image"
-                        class="mb-3">
+                    <img src="{{ asset('uploads/' . $company->img_url) }}" style="max-width: 100px" alt="Company Image" class="mb-3">
                 @else
-                    <img src="{{ asset('assets/images/users/user-dummy-img.jpg') }}" style="max-width: 100px"
-                        alt="Default Image" class="mb-3">
+                    <img src="{{ asset('assets/images/users/user-dummy-img.jpg') }}" style="max-width: 100px" alt="Default Image" class="mb-3">
                 @endif
 
                 <p>Name: {{ $company->name ? $company->name : '' }}</p>

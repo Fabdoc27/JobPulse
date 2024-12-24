@@ -47,19 +47,17 @@
         @if ($topCompanies)
             <div class="container">
                 <div class="row">
-                    <h2 class="text-center my-4">Companies Belive In Us</h2>
+                    <h2 class="text-center my-4">Companies Believe In Us</h2>
                     <div class="col-md-12">
                         <div class="d-flex justify-content-center align-items-center mb-4">
                             @foreach ($topCompanies as $company)
                                 <div class="mx-3 d-flex align-items-center">
                                     @if ($company->img_url)
-                                        <img class="rounded object-fit-cover"
-                                            src="{{ asset('uploads/' . $company->img_url) }}"
-                                            style="height:150px; width:250px;" alt="{{ $company->name }}">
+                                        <img class="rounded object-fit-cover" src="{{ asset('uploads/' . $company->img_url) }}" style="height:150px; width:250px;"
+                                            alt="{{ $company->name }}">
                                     @else
-                                        <img class="rounded object-fit-cover"
-                                            src="{{ asset('assets/images/dummyLogo.png') }}"
-                                            style="height:150px; width:250px;" alt="Placeholder Image">
+                                        <img class="rounded object-fit-cover" src="{{ asset('assets/images/dummyLogo.png') }}" style="height:150px; width:250px;"
+                                            alt="Placeholder Image">
                                     @endif
                                 </div>
                             @endforeach
